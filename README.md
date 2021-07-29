@@ -15,7 +15,7 @@ If you are an openSUSE user, you can configure your environment with:
 
 ```console
 zypper ref
-zypper in ruby ruby-devel 'rubygem(bundler)' nodejs gcc gcc-c++ make libxml2-devel libxslt-devel
+zypper in ruby ruby-devel ruby2.7-rubygem-bundler nodejs gcc gcc-c++ make libxml2-devel libxslt-devel
 ```
 
 We recommend the usage of Ruby 2.5 or higher for the development (openSUSE Leap 15.2 and Tumbleweed satisfy this requirement).
@@ -31,6 +31,7 @@ keys for `secrets.yml`).
 git clone https://github.com/openSUSE/software-o-o.git
 cd software-o-o
 
+bundle config set --local path 'vendor/bundle'
 bundle package
 bundle exec rails s
 ```
